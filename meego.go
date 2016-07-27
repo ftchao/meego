@@ -6,10 +6,10 @@ import (
 	"net/http"
 )
 
-func Run(params ...string) {
+func Run(addr string) {
 	fmt.Print("meego.run\n")
 
-	err := http.ListenAndServe(":9001", nil)
+	err := http.ListenAndServe(addr, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
